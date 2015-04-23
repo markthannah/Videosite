@@ -1,1 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Signika:400,700);
+
+$navbar-default-bg:             #4ab2d9;
+$navbar-default-link-color:     white;
+$font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 @import 'bootstrap';
+
+.center {
+  text-align: center;
+}
+
+.navbar-brand{
+  font-size: 22px;
+}
