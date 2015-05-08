@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @videos = Video.all
@@ -9,32 +11,32 @@ class VideosController < ApplicationController
   end
 
   def new
-    @video = Video.new
+    @video = current_user.videos.build
   end
 
   def edit
   end
 
   def create
-    @video = Video.new(video_params)
+    @video = current_user.videos.build(video_params)
       if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
+        redirect_to @video, notice: 'Video was successfully created.'
       else
-        format.html { render :new }
+        render :new
       end
     end
 
   def update
       if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video was successfully updated.' }
+        redirect_to @video, notice: 'Video was successfully updated.'
       else
-        format.html { render :edit }
+        render :edit
       end
     end
 
   def destroy
     @video.destroy
-      format.html { redirect_to videos_url, notice: 'Video was successfully destroyed.' }
+    redirect_to videos_url
   end
 
   private
@@ -42,6 +44,11 @@ class VideosController < ApplicationController
     def set_video
       @video = Video.find(params[:id])
     end
+
+    def correct_user
+          @video = current_user.videos.find_by(id: params[:id])
+          redirect_to videos_path, notice: "Sorry, you're not authorized to edit this video." if @video.nil?
+        end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
