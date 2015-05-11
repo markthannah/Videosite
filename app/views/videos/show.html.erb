@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
+<%= image_tag @video.image.url (:medium)%>
 
 <p>
   <strong>Title:</strong>
   <%= @video.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @video.description %>
 </p>
 
 <% if @video.user == current_user %>
