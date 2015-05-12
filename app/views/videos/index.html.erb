@@ -1,6 +1,6 @@
 <div id="videos" class ="transitions-enabled">
   <% @videos.each do |video| %>
-    <div class="box" panel panel-default>
+    <div class="box panel panel-default">
       <%= image_tag video.image.url(:medium) %>
       <div class="panel-body">
         <%= video.title %>
