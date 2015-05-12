@@ -1,16 +1,29 @@
-<%= image_tag @video.image.url (:medium)%>
+<%= link_to 'Back', videos_path %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @video.title %>
-</p>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+    <div class="panel-heading center">
+      <%= image_tag @video.image.url (:medium)%>
+    </div>
+    <div class="panel-body">
+    <p>
+      <strong>Title:</strong>
+      <%= @video.title %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @video.description %>
+    </p>
 
-<% if @video.user == current_user %>
-  <%= link_to 'Edit', edit_video_path(@video) %> |
-<% end %>
-  <%= link_to 'Back', videos_path %>
+    <p>
+    <%= @video.user.email if @video.user%>
+  </p>
+
+    <% if @video.user == current_user %>
+      <%= link_to 'Edit', edit_video_path(@video) %>
+    <% end %>
+    </div>
+  </div>
+</div>
