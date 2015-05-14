@@ -1,29 +1,47 @@
-<%= link_to 'Back', videos_path %>
+<%= link_to videos_path do %>
+<h5><span class="glyphicon glyphicon-hand-left"></span>
+Back to Videos</h5></br>
 
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-    <div class="panel-heading center">
-      <%= image_tag @video.image.url (:medium)%>
-    </div>
-    <div class="panel-body">
-    <p>
-      <strong>Title:</strong>
-      <%= @video.title %>
-    </p>
+  <% end %>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="panel panel-default">
+      <div class="panel-heading center">
+        <!--Hiding image on the show page-->
+        <!--<%= image_tag @video.image.url (:medium)%>-->
+        <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src=<%= @video.videourl %>></iframe>
+        </div>
+      </div>
+      <div class="panel-body">
+      <p>
+        <h4><strong>Title:</strong>
+        <%= @video.title %></h4>
+      </p>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @video.description %>
-    </p>
+      <!--Hiding URL on the show page-->
+      <!--<p>
+        <strong>URL:</strong>
+        <%= @video.videourl %>
+      </p>-->
 
-    <p>
-    <%= @video.user.email if @video.user%>
-  </p>
+      <p>
+        <h4><strong>Description:</strong>
+        <%= @video.description %></h4>
+      </p>
+        </br>
+      <!-- Hiding URL on the show page-->
+      <!--<p>
+      <%= @video.user.email if @video.user%>
+    </p>-->
 
-    <% if @video.user == current_user %>
-      <%= link_to 'Edit', edit_video_path(@video) %>
-    <% end %>
+      <% if @video.user == current_user %>
+        <%= link_to edit_video_path(@video) do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        Edit
+        <% end %>
+      <% end %>
+      </div>
     </div>
   </div>
-</div>

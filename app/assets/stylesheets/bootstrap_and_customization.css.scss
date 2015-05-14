@@ -4,7 +4,7 @@ $navbar-default-bg:             #4ab2d9;
 $navbar-default-link-color:     white;
 $font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-
+@import 'bootstrap-sprockets';
 @import 'bootstrap';
 
 .center {
@@ -17,4 +17,11 @@ $font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-ser
 
 body {
   background: #F8F8F8 !important;
+}
+
+.btn {
+    margin: 2px;
+}
+.well {
+    padding: 7px;
 }
