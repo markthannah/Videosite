@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "Videos", root_path, class: "navbar-brand" %>
+    <%= link_to "icurio 2.0 Videos", root_path, class: "navbar-brand" %>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,9 +21,10 @@
         <li><%= link_to "Account Settings", edit_user_registration_path %></li>
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Log in", new_user_session_path %></li>
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <!-- Hiding this from users -->
+        <!--<li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>-->
       <% end %>
 
     </ul>
