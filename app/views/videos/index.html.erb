@@ -4,7 +4,7 @@
       <%= link_to image_tag(video.image.url(:medium)), video %>
       <div class="panel-body">
         <strong><%= link_to video.title, video %></strong><br/>
-        <%= video.description %><br/>
+        <%= truncate(video.description, :length => 120, :separator => " " )%><br/>
 
         <!--Hiding email address on the index page
         <%= video.user.email if video.user%>-->
