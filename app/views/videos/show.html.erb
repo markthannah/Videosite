@@ -29,8 +29,10 @@ Back to Videos</h5></br>
         <h4><%= @video.description %></h4>
       </p>
       <p>
+      <% if @video.duration.present?%>
         <h4><strong>Duration:</strong>
         <%= Time.at(@video.duration).utc.strftime("%M:%S") %>
+        <% end %>
       </p>
         </br>
       <!-- Hiding URL on the show page-->

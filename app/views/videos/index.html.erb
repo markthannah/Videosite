@@ -13,12 +13,14 @@
       <div class="panel-body">
         <strong><%= link_to video.title, video %></strong><br/>
         <%= truncate(video.description, :length => 120, :separator => " " )%><br/>
+      <% if video.duration.present? %>
         <div class="row">
           <div class="pull-right">
           <p class="text-muted"><%=Time.at(video.duration).utc.strftime("%M:%S")%>
           </p>
           </div>
         </div>
+        <% end %>
         <!--Hiding email address on the index page
         <%= video.user.email if video.user%>-->
 
