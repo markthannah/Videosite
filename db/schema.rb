@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513183613) do
+ActiveRecord::Schema.define(version: 20150516182509) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150513183613) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "videourl"
+    t.integer  "duration"
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id"

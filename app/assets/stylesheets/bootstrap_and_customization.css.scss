@@ -19,7 +19,12 @@ $font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-ser
 }
 
 .page-header {
-  border-bottom:3px solid #4ab2d9 !important;
+  border-bottom:3px solid #4ab2d9 !important
+}
+
+.pull-right {
+  float: right !important;
+  padding-right: 15px;
 }
 
 body {
