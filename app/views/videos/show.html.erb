@@ -16,7 +16,7 @@ Back to Videos</h5></br>
       </div>
       <div class="panel-body">
       <p>
-        <h4><strong><%= @video.title %></strong></h4>
+        <h3><strong><%= @video.title %></strong></h3>
       </p>
 
       <!--Hiding URL on the show page-->
@@ -30,8 +30,8 @@ Back to Videos</h5></br>
       </p>
       <p>
       <% if @video.duration.present?%>
-        <h4><strong>Duration:</strong>
-        <%= Time.at(@video.duration).utc.strftime("%M:%S") %>
+        <h4>Duration:
+        <%= Time.at(@video.duration).utc.strftime("%M:%S") %></h4>
         <% end %>
       </p>
         </br>

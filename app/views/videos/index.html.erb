@@ -12,9 +12,9 @@
       <%= link_to image_tag(video.image.url(:medium)), video %>
       <div class="panel-body">
         <strong><%= link_to video.title, video %></strong><br/>
-        <%= truncate(video.description, :length => 120, :separator => " " )%><br/>
+        <%= truncate(video.description, :length => 120, :separator => " " )%>
       <% if video.duration.present? %>
-        <div class="row">
+          <div class="row">
           <div class="pull-right">
           <p class="text-muted"><%=Time.at(video.duration).utc.strftime("%M:%S")%>
           </p>
