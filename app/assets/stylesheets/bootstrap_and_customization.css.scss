@@ -34,6 +34,25 @@ body {
 .btn {
     margin: 2px;
 }
+
 .well {
     padding: 7px;
+}
+
+.carousel-inner {
+  position: relative;
+}
+
+.carousel-caption {
+     position: absolute;
+     z-index: 5;
+     bottom: 0px;
+     left: 0%;
+     right: 0%;
+     text-align: left;
+     padding-left: 25px;
+     padding-right: 15px;
+     padding-bottom: 15px;
+     padding-top: 5px;
+     background-color:rgba(92, 91, 94, 0.5);
 }

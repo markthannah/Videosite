@@ -1,8 +1,8 @@
 <%= link_to videos_path do %>
-<h5><span class="glyphicon glyphicon-hand-left"></span>
-Back to Videos</h5></br>
+  <h5><span class="glyphicon glyphicon-hand-left"></span>
+    Back to Videos</h5></br>
+<% end %>
 
-  <% end %>
   <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <div class="panel panel-default">
@@ -30,9 +30,13 @@ Back to Videos</h5></br>
       </p>
       <p>
       <% if @video.duration.present?%>
+    <div class="row">
+      <div class="pull-right">
         <h4>Duration:
         <%= Time.at(@video.duration).utc.strftime("%M:%S") %></h4>
         <% end %>
+      </div>
+    </div>
       </p>
         </br>
       <!-- Hiding URL on the show page-->
