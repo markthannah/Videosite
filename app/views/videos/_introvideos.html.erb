@@ -1,0 +1,55 @@
+<div id="mycarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="item active">
+        <%=image_tag("thin butterflies.png", :class => "img-responsive", :alt => "Responsive image")%>
+           <div class="carousel-caption">
+             <h2>Are you ready to icurio?</h2>
+               <p style="font-size: 120%; ">icurio is the digital curriculum content solution for personalized learning from Knovation.
+                 With teacher-vetted, standards-aligned digital resources and a framework for curriculum development,
+                 icurio gives teachers more time and flexibility to create engaging lessons that are personally relevant
+                 and educationally appropriate for each student.</p>
+          </div>
+        </div>
+    </div>
+</div>
+</br>
+</br>
+<div class="well">
+<div id="introvideos" class="transitions-enabled">
+  <% @introvideos.each do |video| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(video.image.url(:medium)), video %>
+      <div class="panel-body">
+        <strong><%= link_to video.title, video %></strong><br/>
+        <%= truncate(video.description, :length => 120, :separator => " " )%>
+      <% if video.duration.present? %>
+          <div class="row">
+          <div class="pull-right">
+          <p class="text-muted"><%=Time.at(video.duration).utc.strftime("%M:%S")%>
+          </p>
+          </div>
+        </div>
+        <% end %>
+        <!--Hiding email address on the index page
+        <%= video.user.email if video.user%>-->
+
+        <% if video.user == current_user %>
+          <div class="actions">
+
+          <%= link_to edit_video_path(video) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+            Edit
+          <% end %>
+
+          <%= link_to video, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          Delete
+          <% end %>
+
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

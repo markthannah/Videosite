@@ -1,41 +1,13 @@
 </br>
-<%= render 'pages/home' %>
+<%= render 'videos/introvideos' %>
 </br>
 </br>
-<div id="videos" class ="transitions-enabled">
-  <% @videos.each do |video| %>
-    <div class="box panel panel-default">
-      <%= link_to image_tag(video.image.url(:medium)), video %>
-      <div class="panel-body">
-        <strong><%= link_to video.title, video %></strong><br/>
-        <%= truncate(video.description, :length => 120, :separator => " " )%>
-      <% if video.duration.present? %>
-          <div class="row">
-          <div class="pull-right">
-          <p class="text-muted"><%=Time.at(video.duration).utc.strftime("%M:%S")%>
-          </p>
-          </div>
-        </div>
-        <% end %>
-        <!--Hiding email address on the index page
-        <%= video.user.email if video.user%>-->
-
-        <% if video.user == current_user %>
-          <div class="actions">
-
-          <%= link_to edit_video_path(video) do %>
-            <span class="glyphicon glyphicon-edit"></span>
-            Edit
-          <% end %>
-
-          <%= link_to video, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <span class="glyphicon glyphicon-trash"></span>
-          Delete
-          <% end %>
-
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-  </div>
+</br>
+</br>
+</br>
+</br>
+<%= render 'videos/testimonialvideos' %>
+</br>
+</br>
+</br>
+</br>

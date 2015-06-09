@@ -4,7 +4,8 @@ class VideosController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @videos = Video.all
+    @testimonialvideos = Video.where("category = 'testimonial'", params[:category]).order(:order)
+    @introvideos = Video.where("category = 'intro'", params[:category]).order(:order)
   end
 
   def show
@@ -52,6 +53,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:description, :title, :videourl, :image, :duration)
+      params.require(:video).permit(:description, :title, :videourl, :image, :duration, :order, :category)
     end
 end
