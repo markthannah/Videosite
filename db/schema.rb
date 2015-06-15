@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150529030526) do
     t.string   "videourl"
     t.integer  "duration"
     t.string   "category"
+    t.integer  "oorder"
     t.integer  "order"
   end
 
