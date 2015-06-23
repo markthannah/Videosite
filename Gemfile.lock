@@ -40,6 +40,8 @@ GEM
     autoprefixer-rails (5.1.10)
       execjs
       json
+    av (0.9.0)
+      cocaine (~> 0.5.3)
     aws-sdk (1.64.0)
       aws-sdk-v1 (= 1.64.0)
     aws-sdk-v1 (1.64.0)
@@ -108,6 +110,9 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paperclip-av-transcoder (0.6.4)
+      av (~> 0.9.0)
+      paperclip (>= 2.5.2)
     pg (0.18.1)
     rack (1.6.0)
     rack-test (0.6.3)
@@ -195,6 +200,7 @@ DEPENDENCIES
   jquery-turbolinks
   masonry-rails
   paperclip (~> 4.2)
+  paperclip-av-transcoder
   pg
   rails (= 4.2.1)
   rails_12factor
