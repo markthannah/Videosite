@@ -7,7 +7,7 @@
   <table class="table table-vcenter">
     <thead>
       <tr>
-        <th style=width=5%></th>
+        <th></th>
         <th>Recipient</th>
         <th>Greeting</th>
         <th>Message</th>
@@ -20,8 +20,8 @@
       <% @custom_pages.each do |custom_page| %>
         <%if custom_page.user == current_user%>
           <tr>
-            <td style=width=5%></td>
-            <td><%= link_to custom_page_path(custom_page) do %>
+            <td></td>
+            <td style=width:15%><%= link_to custom_page_path(custom_page) do %>
               <span class="glyphicon glyphicon-new-window"></span>
               <%=custom_page.recipient%>
             <% end %></td>
