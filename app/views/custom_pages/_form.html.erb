@@ -74,7 +74,7 @@
                 <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
                 <td><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
                 <td style="width:25%"><%= label_tag :video_titles, video.title -%></td>
-                <td><%= label_tag :video_descriptions, video.description -%></td>
+                <td><%=label_tag :video_descriptions, truncate(video.description, :length => 120, :separator => " ")-%></td>
                 <td></td>
               </tr>
           <% end -%>
