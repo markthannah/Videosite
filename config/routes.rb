@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :custom_pages
   resources :videos
   devise_for :users
 root "videos#index"

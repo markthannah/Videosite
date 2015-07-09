@@ -1,0 +1,92 @@
+<%= form_for(@custom_page) do |f| %>
+  <% if @custom_page.errors.any? %>
+    <div id="error_explanation">
+      <h2>Sorry. You'll need to fix these <%= pluralize(@custom_page.errors.count, "thing") %> before you can save this page:</h2>
+
+      <ul>
+      <% @custom_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :recipient %><br>
+    <%= f.text_field :recipient, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :greeting %><br>
+    <%= f.text_field :greeting, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :message %><br>
+    <%= f.text_area :message, class: "form-control"%>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 center">
+      <h3>Select Mooresville Videos</h3>
+    </div>
+  <div class="col-md-6 center">
+    <h3>Select icurio 2.0 Training Videos</h3>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-hover table-vcenter">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Video Preview</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @testimonialvideos.each do |video| %>
+            <tr>
+              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
+              <td><%= link_to image_tag(video.image.url (:thumb)), video, :target => "_blank"%></td>
+              <td style="width:25%"><%= label_tag :video_titles, video.title -%></td>
+              <td><%= label_tag :video_descriptions, video.description -%></td>
+              <td></td>
+            </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  </div>
+    <div class="col-md-6">
+        <table class="table table-hover table-vcenter">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Video Preview</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th colspan="4"></th>
+            </tr>
+          </thead>
+        <tbody>
+        <% @introvideos.each do |video| %>
+              <tr>
+                <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
+                <td><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
+                <td style="width:25%"><%= label_tag :video_titles, video.title -%></td>
+                <td><%= label_tag :video_descriptions, video.description -%></td>
+                <td></td>
+              </tr>
+          <% end -%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</br>
+</br>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to 'Cancel', custom_pages_path, class: "btn btn-danger"%>
+    </div>
+
+<% end %>

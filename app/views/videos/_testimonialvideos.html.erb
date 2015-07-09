@@ -16,7 +16,8 @@
 </div>
 </br>
 </br>
-<div class="well">
+<div class="border">
+<div class="well well-sm">
 <div id="testimonialvideos" class="transitions-enabled">
 <% @testimonialvideos.each do |video| %>
   <div class="box panel panel-default">
@@ -32,8 +33,6 @@
         </div>
       </div>
       <% end %>
-      <!--Hiding email address on the index page
-      <%= video.user.email if video.user%>-->
 
       <% if video.user == current_user %>
         <div class="actions">
@@ -53,5 +52,6 @@
     </div>
   </div>
   <% end %>
+</div>
 </div>
 </div>

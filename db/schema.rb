@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529030526) do
+ActiveRecord::Schema.define(version: 20150706030230) do
+
+  create_table "custom_pages", force: :cascade do |t|
+    t.string   "greeting"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.string   "recipient"
+  end
+
+  create_table "customizations", force: :cascade do |t|
+    t.integer  "video_id"
+    t.integer  "custom_page_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

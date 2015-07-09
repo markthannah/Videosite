@@ -19,7 +19,11 @@ $font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-ser
 }
 
 .page-header {
-  border-bottom:3px solid #4ab2d9 !important
+  border-bottom:3px solid #4ab2d9 !important;
+}
+
+.border {
+  border-top:3px solid #4ab2d9;
 }
 
 .pull-right {
@@ -28,7 +32,7 @@ $font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-ser
 }
 
 body {
-  background: #F8F8F8 !important;
+  background: white !important;
 }
 
 .btn {
@@ -37,7 +41,7 @@ body {
 
 .well {
   margin: 0 auto;
-  background: white;
+  background: #EEEEEE;;
 }
 
 .carousel-inner {
