@@ -7,11 +7,11 @@
     <div class="col-md-offset-1 col-md-10">
       <div class="panel panel-default">
       <div class="panel-heading center">
-        <!--Hiding image on the show page-->
-        <!--<%= image_tag @video.image.url (:medium)%>-->
         <!-- 16:9 aspect ratio -->
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src=<%= @video.videourl %>></iframe>
+          <video controls="controls">
+              <source src=<%= @video.videourl %> type='video/mp4'/>
+          </video>
         </div>
       </div>
       <div class="panel-body">
