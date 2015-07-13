@@ -14,14 +14,12 @@
 
     <!-- Videos -->
   <% @custom_page.videos.each do |video| %>
-    <div class="row">
-        <div class="col-md-7">
-          <div class="embed-responsive embed-responsive-16by9">
-            <video controls="controls">
-                <source src=<%= video.videourl %> type='video/mp4'/>
-            </video>
-          </div>
+  <div class="row">
+      <div class="col-md-7">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src=<%= video.videourl %>></iframe>
         </div>
+      </div>
         <div class="col-md-5">
             <h3><%= video.title %></br>
             <small><%= video.description%></small>
