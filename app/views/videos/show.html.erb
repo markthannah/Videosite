@@ -1,55 +1,45 @@
 <%= link_to videos_path do %>
   <h5><span class="glyphicon glyphicon-hand-left"></span>
-    Back to Videos</h5></br>
+  Back to Videos</h5></br>
 <% end %>
 
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10">
-      <div class="panel panel-default">
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <div class="panel panel-default">
       <div class="panel-heading center">
-        <!-- 16:9 aspect ratio -->
+      <!-- 16:9 aspect ratio -->
         <div class="embed-responsive embed-responsive-16by9">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src=<%= @video.videourl %>></iframe>
-          </div>
+          <video  width="980" height="620" controls poster= <%=@video.image %>
+           <source src=<%=@video.videourl %> type='video/mp4'>
+           <p>To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+          </video>
         </div>
       </div>
       <div class="panel-body">
-      <p>
-        <h3><strong><%= @video.title %></strong></h3>
-      </p>
-
-      <!--Hiding URL on the show page-->
-      <!--<p>
-        <strong>URL:</strong>
-        <%= @video.videourl %>
-      </p>-->
-
-      <p>
-        <h4><%= @video.description %></h4>
-      </p>
-      <p>
-      <% if @video.duration.present?%>
-    <div class="row">
-      <div class="pull-right">
-        <h4>Duration:
-        <%= Time.at(@video.duration).utc.strftime("%M:%S") %></h4>
-        <% end %>
-      </div>
-    </div>
-      </p>
+        <p>
+          <h3><strong><%= @video.title %></strong></h3>
+        </p>
+        <p>
+          <h4><%= @video.description %></h4>
+        </p>
+        <p>
+        <% if @video.duration.present?%>
+          <div class="row">
+            <div class="pull-right">
+              <h4>Duration:
+              <%= Time.at(@video.duration).utc.strftime("%M:%S") %></h4>
+              <% end %>
+            </div>
+          </div>
+        </p>
         </br>
-      <!-- Hiding URL on the show page-->
-      <!--<p>
-      <%= @video.user.email if @video.user%>
-    </p>-->
 
       <% if @video.user == current_user %>
         <%= link_to edit_video_path(@video) do %>
         <span class="glyphicon glyphicon-edit"></span>
         Edit
-        <% end %>
       <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>

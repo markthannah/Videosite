@@ -13,18 +13,22 @@
     <!-- /.row -->
 
     <!-- Videos -->
-  <% @custom_page.videos.each do |video| %>
-  <div class="row">
-      <div class="col-md-7">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src=<%= video.videourl %>></iframe>
+    <% @custom_page.videos.each do |video| %>
+    <div class="row">
+        <div class="col-md-7">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video width="640" height="360" controls poster=<%=video.image %>
+              <source src= <%=video.videourl%>> type='video/mp4'>
+              <p> To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+            </video>
+          </div>
         </div>
-      </div>
         <div class="col-md-5">
-            <h3><%= video.title %></br>
-            <small><%= video.description%></small>
-            </h3>
+          <h3><%= video.title %></br>
+          <small><%= video.description%></small>
+          </h3>
         </div>
     </div>
-    <hr>
+  <hr>
   <% end %>
+</div>
