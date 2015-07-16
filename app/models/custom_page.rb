@@ -4,7 +4,5 @@ class CustomPage < ActiveRecord::Base
   has_many :customizations
   has_many :videos, :through => :customizations
 
-  validates :greeting, presence: true
-  validates :message, presence: true
   validates :recipient, presence: true
 end

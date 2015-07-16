@@ -8,6 +8,7 @@ class CustomPagesController < ApplicationController
   end
 
   def show
+    render 'layouts/header' => false
   end
 
   def new
@@ -24,6 +25,9 @@ class CustomPagesController < ApplicationController
   end
 
   def create
+    @videos = Video.all
+    @testimonialvideos = Video.where("category = 'testimonial'", params[:category]).order(:order)
+    @introvideos = Video.where("category = 'intro'", params[:category]).order(:order)
     @custom_page = current_user.custom_pages.build(custom_page_params)
     if @custom_page.save
       redirect_to @custom_page, notice: 'Custom page was successfully created.'
