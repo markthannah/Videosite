@@ -16,7 +16,7 @@
     </thead>
 
     <tbody>
-      <% unless @custom_pages.empty? %>
+      <% unless @custom_pages.blank? %>
       <% @custom_pages.each do |custom_page| %>
         <%if custom_page.user == current_user%>
           <tr>
