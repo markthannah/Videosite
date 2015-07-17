@@ -1,7 +1,7 @@
 <%= form_for @custom_page, html: {multipart: true} do |f| %>
   <% if @custom_page.errors.any? %>
     <div id="error_explanation">
-      <h2>Sorry. You'll need to fix these <%= pluralize(@custom_page.errors.count, "thing") %> before you can save this page:</h2>
+      <h2>Sorry. You'll need to fix this <%= pluralize(@custom_page.errors.count, "thing") %> before you can save this page:</h2>
 
       <ul>
       <% @custom_page.errors.full_messages.each do |message| %>

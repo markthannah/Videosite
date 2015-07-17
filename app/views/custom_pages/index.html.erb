@@ -7,7 +7,7 @@
   <table class="table table-vcenter">
     <thead>
       <tr>
-        <th></th>
+        <th style=width=5%></th>
         <th>Recipient</th>
         <th>Greeting</th>
         <th>Message</th>
@@ -16,12 +16,12 @@
     </thead>
 
     <tbody>
-      <% unless @custom_pages.count < 1 %>
+      <% unless @custom_pages.empty? %>
       <% @custom_pages.each do |custom_page| %>
         <%if custom_page.user == current_user%>
           <tr>
-            <td></td>
-            <td style=width:15%><%= link_to custom_page_path(custom_page) do %>
+            <td style=width=5%></td>
+            <td><%= link_to custom_page_path(custom_page) do %>
               <span class="glyphicon glyphicon-new-window"></span>
               <%=custom_page.recipient%>
             <% end %></td>
@@ -39,8 +39,8 @@
         <% end %>
         <tr>
         <% else %>
-            <td align="center" colspan="4"><h4>You don't have any custom pages yet.</br></br>This is where your custom pages will appears once they are created. Only you can edit or delete custom pages that you create.</h4><td>
-          <% end %>
+        <td align="center" colspan="4"><h4>You don't have any custom pages yet.</br></br>This is where your custom pages will appears once they are created. Only you can edit or delete custom pages that you create.</h4><td>
+        <% end %>
         </tr>
     </tbody>
   </table>
