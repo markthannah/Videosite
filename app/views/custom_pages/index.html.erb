@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h2>My Custom Pages</h2>
 <br>
 <div>
@@ -16,7 +14,6 @@
     </thead>
 
     <tbody>
-      <% unless @custom_pages.empty? %>
       <% @custom_pages.each do |custom_page| %>
         <%if custom_page.user == current_user%>
           <tr>
@@ -38,8 +35,8 @@
         <% end %>
         <% end %>
         <tr>
-        <% else %>
-        <td align="center" colspan="4"><h4>You don't have any custom pages yet.</br></br>This is where your custom pages will appears once they are created. Only you can edit or delete custom pages that you create.</h4><td>
+        <% if @custom_pages.empty? %>
+          <td align="center" colspan="4"><h4>You don't have any custom pages yet.</br></br>This is where your custom pages will appears once they are created. Only you can edit or delete custom pages that you create.</h4><td>
         <% end %>
         </tr>
     </tbody>

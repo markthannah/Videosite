@@ -48,7 +48,7 @@ class CustomPagesController < ApplicationController
 
   def destroy
     @custom_page.destroy
-    redirect_to custom_pages_url, notice: 'Custom page was successfully destroyed.'
+    redirect_to custom_pages_url, notice: 'Custom page was successfully deleted.'
   end
 
   private
