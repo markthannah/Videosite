@@ -62,7 +62,7 @@ p.knov {
 
 .parallax-like .overlay {
     min-height: 250px;
-    background: rgba(35, 133, 161);
+    background: rgba(35, 133, 161,0);
     font-size: 40px;
     padding-bottom: 60px;
     padding-top: 60px;
