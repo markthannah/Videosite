@@ -3,7 +3,22 @@ table {
   border-spacing: 0 5px;
 }
 
-thead th {
+.nT {
+  background-color: #009fe2;
+  color: white;
+}
+
+.ic1 {
+  background-color: #78ab36;
+  color: white;
+}
+
+.ic2 {
+  background-color: #f18020;
+  color: white;
+}
+
+.cpindex {
   background-color: #2e6da4;
   color: white;
 }
@@ -20,6 +35,15 @@ tbody td {
   vertical-align: middle!important;
 }
 
+.reduce-tablepad {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form-long {
+  overflow-y: auto;
+  height: 70px;
+}
 
 tr td:first-child,
 tr th:first-child {
@@ -31,4 +55,12 @@ tr td:last-child,
 tr th:last-child {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
+}
+
+.hidden {
+    display:none;
+}
+
+table tr td.extend {
+  width:50%
 }

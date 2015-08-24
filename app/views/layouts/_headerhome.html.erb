@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default navbar-fixed-top" href="#page-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class= "container">
+
+  <div class="navbar-header page-scroll">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="page-scroll" href="#page-top"><%= image_tag("brandmark") %></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden">
+            <a class="page-scroll" href="#page-top"></a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#nettrekker" style ="padding-top: 10px;">netTrekker</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#icurio1" style ="padding-top: 10px;">icurio 1.0</a>
+        </li>
+        <li>
+            <a class="page-scroll" href="#icurio2" style ="padding-top: 10px;">icurio 2.0</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+
+      <% if user_signed_in? %>
+      <div class="btn-group" role="group" aria-label="..." style ="padding-top: 17px;">
+        <%= link_to 'New Video', new_video_path, class: "btn btn-default btn-controls" %>
+        <%= link_to 'My Custom Pages', custom_pages_path, class: "btn btn-default btn-controls" %>
+        <%= link_to "Account Settings", edit_user_registration_path, class: "btn btn-default btn-controls" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-controls" %>
+      </div>
+      <% else %>
+        <div class="btn_container">
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-md btn-hover btn-primary" %>
+        </div>
+      <% end %>
+
+    </ul>
+  </div><!-- /.navbar-collapse -->
+
+</div><!-- /.navbar-collapse -->
+</nav>

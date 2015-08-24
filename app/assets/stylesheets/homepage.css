@@ -1,0 +1,190 @@
+
+/*================================
+    GENERAL STYLES
+==================================*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto); /* GOOGLE FREE FONTS */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    padding-top: 100px;
+}
+
+.head-set {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.knovpad {
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.btn-controls {
+  font-size: 12px;
+  color: #68c8c6;
+}
+
+/*================================
+    HOME SECTION STYLES
+==================================*/
+
+/*STYLE OF BACKGROUND IMAGE*/
+.home img {
+        width: 100%;
+    }
+
+p.knov {
+    font-size: 1.25em;
+    color: gray;
+    padding-top: 30px;
+    }
+
+.logocentered {
+  margin: auto;
+}
+
+/*======================================
+    PARALLAX LIKE / STATS SECTION STYLES
+=========================================*/
+
+.parallax-like {
+    background: url("hands") no-repeat center center; /* DEFINE IMAGE PATH CAREFULLY*/
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+.parallax-like .overlay {
+    min-height: 250px;
+    background: rgba(35, 133, 161);
+    font-size: 40px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.section-titlent hr{
+	border-color: #009fe2;
+	border-width: 4px;
+	width: 60px;
+	float: left;
+	clear: both;
+}
+
+.videopaddingnt {
+  outline: 10px solid #CCCCCC;
+  background: transparent;
+}
+
+.section-titleic1 hr{
+	border-color: #78ab36;
+	border-width: 4px;
+	width: 60px;
+	float: left;
+	clear: both;
+}
+
+.videopaddingic1 {
+  outline: 10px solid #CCCCCC;
+  background: transparent;
+}
+
+.section-titleic2 hr{
+	border-color: #f18020;
+	border-width: 4px;
+	width: 60px;
+	float: left;
+	clear: both;
+}
+
+.videopaddingic2 {
+  outline: 10px solid #CCCCCC;
+  background: transparent;
+}
+
+#vidsample{
+  padding-top: 111px;
+  padding-bottom: 1px;
+}
+
+.about-text-left {
+  padding-left:30px;
+}
+
+.about-text-right {
+  padding-right:30px;
+}
+
+p.intro{
+	font-size: 16px;
+	margin: 12px 0 0;
+	line-height: 24px;
+  padding-bottom: 25px;
+}
+
+/*end nettrekker*/
+
+.parallax-like2 {
+    background: url("girl hand") no-repeat center center; /* DEFINE IMAGE PATH CAREFULLY*/
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+.parallax-like2 .overlay {
+    min-height: 250px;
+    background: rgba(35, 133, 161);
+    font-size: 40px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.parallax-like3 {
+    background: url("kids ipad") no-repeat center center; /* DEFINE IMAGE PATH CAREFULLY*/
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+.parallax-like3 .overlay {
+    min-height: 250px;
+    background: rgba(35, 133, 161);
+    font-size: 40px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.smalllogo {
+    height: 100px;
+}
+
+/*================================
+    PORTFOLIO / WORK SECTION STYLES
+==================================*/
+.portfolio-item img:hover { /* POSTFOLIO IMAGE BIG ON HOVER */
+    cursor: pointer;
+    -webkit-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    z-index: 1;
+}
+
+/*================================
+    FOOTER SECTION STYLES
+==================================*/
+
+.footer {
+    padding-top: 140px;
+    width: 100%
+    {

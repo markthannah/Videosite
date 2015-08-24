@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= favicon_link_tag 'favicon copy.ico' %>
-  <title>icurio Videos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= favicon_link_tag 'favbird' %>
+  <title>Knovation Videos</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+  <script src="js/medium-editor.js"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-  <%= render 'layouts/header' %>
-    <div class="container">
-        <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-info") %>
-        <% end %>
-  <%= yield %>
+  <% if current_page?(root_path) %>
+    <%= render 'layouts/headerhome' %>
+  <% else %>
+    <%= render 'layouts/header' %>
+  <% end %>
+
+  <div class="container">
+    <!--<% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert alert-info") %>
+    <% end %> -->
+    <%= yield %>
+  </div>
+
+  <div class="sidebar">
+    <%= yield :homepage %>
+    <%= yield :ic1vids %>
+    <%= yield :ntvids %>
   </div>
 
 </body>

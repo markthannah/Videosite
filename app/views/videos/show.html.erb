@@ -1,7 +1,30 @@
-<%= link_to videos_path do %>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<% if @video.product == 'netTrekker' %>
+  <%=link_to ntvids_path do %>
   <h5><span class="glyphicon glyphicon-hand-left"></span>
-  Back to Videos</h5></br>
-<% end %>
+  All netTrekker Videos</h5></br>
+  <% end %>
+<%end%>
+
+<% if @video.product == 'icurio 1.0' %>
+  <%=link_to ic1vids_path do %>
+  <h5><span class="glyphicon glyphicon-hand-left"></span>
+  All icurio 1.0 Videos</h5></br>
+  <% end %>
+<%end%>
+
+<% if @video.product == 'icurio 2.0' %>
+  <%=link_to ic2vids_path do %>
+  <h5><span class="glyphicon glyphicon-hand-left"></span>
+  All icurio 2.0 Videos</h5></br>
+  <% end %>
+<%end%>
 
 <div class="row">
   <div class="col-md-offset-1 col-md-10">
@@ -38,8 +61,10 @@
         <%= link_to edit_video_path(@video) do %>
         <span class="glyphicon glyphicon-edit"></span>
         Edit
+        <% end %>
       <% end %>
-      <% end %>
+
     </div>
   </div>
+</div>
 </div>

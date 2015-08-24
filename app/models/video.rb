@@ -15,4 +15,6 @@ class Video < ActiveRecord::Base
   validates :order, numericality: { only_integer: true }
   validates :duration, numericality: { only_integer: true }
   validates_inclusion_of :category, :in => ["testimonial","intro"], message: "must be testimonial or intro"
+  validates_inclusion_of :product, :in => ["netTrekker","icurio 1.0","icurio 2.0"], message: "must be netTrekker, icurio 1.0, or icurio 2.0"
+
   end

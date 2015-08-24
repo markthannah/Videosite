@@ -1,13 +1,194 @@
-</br>
-<%= render 'videos/introvideos' %>
-</br>
+<% content_for :homepage do %>
 </br>
 </br>
 </br>
 </br>
 </br>
-<%= render 'videos/testimonialvideos' %>
-</br>
-</br>
-</br>
-</br>
+  <div class="home">
+    <%=image_tag("closing-background2") %>
+  </div>
+  <div class="container">
+      <div class="row text-center knovpad">
+          <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+              <p class="knov">
+                Knovation partners with educators, districts, educational technology
+                solution developers and content providers to design and implement
+                innovative personalized learning solutions that reduce barriers to
+                learning. Knovation’s solutions include the award-winning netTrekker and the icurio digital curriculum solution, professional learning and consulting services, a fully curated learning resource library, content contextualization services and more.
+              </p>
+          </div>
+      </div>
+      <div class="row text-center">
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item">
+            <a class="page-scroll" href="#nettrekker"><%= image_tag("ntlogo", :class => "img-responsive logocentered", :alt => "Responsive image") %></a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item">
+            <a class="page-scroll" href="#icurio1"><%= image_tag("1.0logomed", :class => "img-responsive logocentered", :alt => "Responsive image") %></a>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item">
+            <a class="page-scroll" href="#icurio2"><%= image_tag("2.0logomd", :class => "img-responsive logocentered", :alt => "Responsive image") %></a>
+          </div>
+      </div>
+    </div>
+<!--HOME SECTION END  -->
+  <section id="nettrekker">
+    <div class="parallax-like">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div>
+                          <%= image_tag("reverse", :class => "img-responsive logocentered", :alt => "Responsive image") %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="vidsample">
+        <div class="container">
+          <% @ic2testimonialvideos.each do |video| %>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9 videopaddingnt">
+                  <video controls width="640" height="360" poster="https://s3-us-west-2.amazonaws.com/nettrekker-videos/finalposter1.jpg">
+                    <source src= "https://s3-us-west-2.amazonaws.com/nettrekker-videos/Introducing+netTrekker-HD.mp4" type='video/mp4'>
+                    <p> To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+                  </video>
+                </div>
+              </div>
+              <%end%>
+                <div class="col-md-6">
+                    <div class="about-text-left">
+                        <div class="section-titlent">
+                            <h4>netTrekker</h4>
+                            <h2><strong>Active </strong>Learning Resources</h2>
+                            <hr>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p class="intro">netTrekker delivers the industry-leading digital learning resource library with more than 360,000 educator-curated resources — each one tagged, organized, and aligned to state and Common Core standards so that teachers, students, and parents can find just what they need, quickly and safely.</p>
+                        <div class="text-center">
+                          <%= link_to ntvids_path, class: "btn btn-primary" do %>
+                            VIEW MORE VIDEOS
+                            <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" style="padding-left: 5px; padding-top: 5px;"></span>
+                          <%end%>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+<!--PARALLAX LIKE / NETTREKKER SECTION END  -->
+<section id="icurio1">
+  <div class="parallax-like2">
+      <div class="overlay">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div>
+                      <%= image_tag("1.0logo", :class => "img-responsive logocentered smalllogo", :alt => "Responsive image") %>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="vidsample">
+      <div class="container">
+        <% @ic2testimonialvideos.each do |video| %>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="about-text-right">
+                      <div class="section-titleic1">
+                          <h4>icurio 1.0</h4>
+                          <h2><strong>Digital </strong>Curriculum Content</h2>
+                          <hr>
+                          <div class="clearfix"></div>
+                      </div>
+                      <p class="intro">icurio 1.0 is the digital curriculum content solution for personalized learning from Knovation. With teacher-vetted, standards-aligned digital resources and a framework for curriculum development, icurio gives teachers more time and flexibility to create engaging lessons that are personally relevant and educationally appropriate for each student.</p>
+                      <div class="text-center">
+                        <%= link_to ic1vids_path, class: "btn btn-primary" do %>
+                          VIEW MORE VIDEOS
+                          <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" style="padding-left: 5px; padding-top: 5px;"></span>
+                        <%end%>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9 videopaddingic1">
+                  <video controls width="640" height="360" poster="https://s3-us-west-2.amazonaws.com/nettrekker-videos/finalposter2.jpg">
+                    <source src= "https://s3-us-west-2.amazonaws.com/nettrekker-videos/icurio+Introduction-web.mp4" type='video/mp4'>
+                    <p> To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+                  </video>
+                </div>
+              </div>
+              <%end%>
+          </div>
+      </div>
+  </div>
+</section>
+<!--PARALLAX LIKE / icurio 1.0 SECTION END  -->
+<section id="icurio2">
+  <div class="parallax-like3">
+      <div class="overlay">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div>
+                      <%= image_tag("2.0logo", :class => "img-responsive logocentered smalllogo", :alt => "Responsive image") %>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="vidsample">
+      <div class="container">
+        <% @ic2testimonialvideos.each do |video| %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="embed-responsive embed-responsive-16by9 videopaddingic2">
+                <video controls width="640" height="360" poster="https://s3-us-west-2.amazonaws.com/nettrekker-videos/finalposter3.jpg">
+                  <source src= "https://s3.amazonaws.com/icuriovideos/MIS+videos/icurio+2.0_Meet+icurio+2.0.mp4" type='video/mp4'>
+                  <p> To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video</p>
+                </video>
+              </div>
+            </div>
+            <%end%>
+            <div class="col-md-6">
+              <div class="about-text-left">
+                <div class="section-titleic2">
+                  <h4>icurio 2.0</h4>
+                  <h2><strong>Agile</strong> Teaching. <strong>Active</strong> Learning</h2>
+                  <hr>
+                <div class="clearfix"></div>
+                </div>
+                <p class="intro">icurio 2.0 is the only learning engagement solution that starts with a powerful foundation of 360,000+ educator-curated, standards-aligned open educational resources (OER). Add to that powerful instruction tools, streamlined delivery, real-time insights into student understanding and personalized feedback at the point of learning – and you have a complete solution to support your district’s digital conversion.</p>
+                <div class="text-center">
+                  <%= link_to ic2vids_path, class: "btn btn-primary" do %>
+                    VIEW MORE VIDEOS
+                    <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" style="padding-left: 5px; padding-top: 5px;"></span>
+                  <%end%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+<!--PARALLAX LIKE / icurio 2.0 SECTION END  -->
+
+<div class="footer">
+  <%= image_tag("footer-green", :class => "img-responsive logocentered", :alt => "Responsive image") %>
+</div>
+
+<!-- FOOTER SECTION END-->
+<!-- REQUIRED SCRIPTS FILES -->
+<!-- CORE JQUERY FILE -->
+<script src="assets/js/jquery-1.11.1.js"></script>
+<!-- REQUIRED BOOTSTRAP SCRIPTS -->
+<script src="assets/js/bootstrap.js"></script>
+<!-- CUSTOM SCRIPTS   -->
+<script src="assets/js/custom.js"></script>
+<% end %>

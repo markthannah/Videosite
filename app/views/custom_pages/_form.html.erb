@@ -21,66 +21,118 @@
   </div>
   <div class="form-group">
     <%= f.label :message %><br>
-    <%= f.text_area :message, class: "form-control"%>
+    <%= f.text_area :message, class: "form-control editable form-long".html_safe %>
   </div>
+
   <div class="row">
-    <div class="col-md-6 center">
-      <h3>Select Mooresville Videos</h3>
+    <div class="col-md-3 center">
+      <h3>netTrekker: Training</h3>
     </div>
-  <div class="col-md-6 center">
-    <h3>Select icurio 2.0 Training Videos</h3>
+    <div class="col-md-3 center">
+      <h3>icurio 1.0: Training</h3>
+    </div>
+    <div class="col-md-3 center">
+      <h3>icurio 2.0: Training</h3>
+    </div>
+    <div class="col-md-3 center">
+      <h3>icurio 2.0: Mooresville</h3>
+    </div>
   </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
+
+<div class="row">
+  <div class="col-md-3 reduce-tablepad">
       <table class="table table-hover table-vcenter">
-        <thead>
+        <thead class="nT">
           <tr>
             <th></th>
             <th>Video Preview</th>
             <th>Title</th>
-            <th>Description</th>
-            <th colspan="4"></th>
+            <th colspan="3"></th>
           </tr>
         </thead>
       <tbody>
-        <% @testimonialvideos.each do |video| %>
+      <% @ntintrovideos.each do |video| %>
             <tr>
-              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
-              <td><%= link_to image_tag(video.image.url (:thumb)), video, :target => "_blank"%></td>
-              <td style="width:25%"><%= label_tag :video_titles, video.title -%></td>
-              <td><%=label_tag :video_descriptions, truncate(video.description, :length => 120, :separator => " ")-%></td>
+              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]'-%></td>
+              <td style="width:45%"><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
+              <td><%= label_tag :video_titles, video.title -%></td>
               <td></td>
             </tr>
         <% end -%>
       </tbody>
     </table>
   </div>
-    <div class="col-md-6">
+
+  <div class="col-md-3 reduce-tablepad">
+      <table class="table table-hover table-vcenter">
+        <thead class="ic1">
+          <tr>
+            <th></th>
+            <th>Video Preview</th>
+            <th>Title</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      <tbody>
+      <% @ic1introvideos.each do |video| %>
+            <tr>
+              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]'-%></td>
+              <td style="width:45%"><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
+              <td><%= label_tag :video_titles, video.title -%></td>
+              <td></td>
+            </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  </div>
+
+    <div class="col-md-3 reduce-tablepad">
         <table class="table table-hover table-vcenter">
-          <thead>
+          <thead class="ic2">
             <tr>
               <th></th>
               <th>Video Preview</th>
               <th>Title</th>
-              <th>Description</th>
-              <th colspan="4"></th>
+              <th colspan="3"></th>
             </tr>
           </thead>
         <tbody>
-        <% @introvideos.each do |video| %>
+        <% @ic2introvideos.each do |video| %>
               <tr>
-                <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
-                <td><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
-                <td style="width:25%"><%= label_tag :video_titles, video.title -%></td>
-                <td><%=label_tag :video_descriptions, truncate(video.description, :length => 120, :separator => " ")-%></td>
+                <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]'-%></td>
+                <td style="width:45%"><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
+                <td><%= label_tag :video_titles, video.title -%></td>
                 <td></td>
               </tr>
           <% end -%>
         </tbody>
       </table>
     </div>
+
+    <div class="col-md-3 reduce-tablepad">
+      <table class="table table-hover table-vcenter">
+        <thead class="ic2">
+          <tr>
+            <th></th>
+            <th>Video Preview</th>
+            <th>Title</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+      <tbody>
+        <% @ic2testimonialvideos.each do |video| %>
+            <tr>
+              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
+              <td style="width:45%"><%= link_to image_tag(video.image.url (:thumb)), video, :target => "_blank"%></td>
+              <td><%= label_tag :video_titles, video.title -%></td>
+              <td></td>
+            </tr>
+        <% end -%>
+      </tbody>
+    </table>
   </div>
+</div>
+
 </br>
 </br>
     <div class="form-group">
@@ -88,3 +140,25 @@
       <%= link_to 'Cancel', custom_pages_path, class: "btn btn-danger"%>
     </div>
 <% end %>
+
+
+<!--Script for checkbox activating order text field-->
+<script>
+$('.show').click(function () {
+    $(this).next().toggleClass('hidden');
+})
+</script>
+
+<script>
+var editor = new MediumEditor('.editable', {
+    toolbar: {
+        buttons: [
+            'bold',
+            'italic',
+            'anchor',
+            'removeFormat'
+        ]
+    },
+    placeholder: false
+});
+</script>

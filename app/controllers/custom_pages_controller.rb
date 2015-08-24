@@ -8,26 +8,32 @@ class CustomPagesController < ApplicationController
   end
 
   def show
-    render 'layouts/header' => false
   end
 
   def new
     @custom_page = current_user.custom_pages.build
     @videos = Video.all
-    @testimonialvideos = Video.where("category = 'testimonial'", params[:category]).order(:order)
-    @introvideos = Video.where("category = 'intro'", params[:category]).order(:order)
+    @ic2introvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'intro'", params[:category]).order(:order)
+    @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
+    @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
+    @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
   end
 
   def edit
     @videos = Video.all
-    @testimonialvideos = Video.where("category = 'testimonial'", params[:category]).order(:order)
-    @introvideos = Video.where("category = 'intro'", params[:category]).order(:order)
+    @ic2introvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'intro'", params[:category]).order(:order)
+    @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
+    @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
+    @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
   end
 
   def create
     @videos = Video.all
-    @testimonialvideos = Video.where("category = 'testimonial'", params[:category]).order(:order)
-    @introvideos = Video.where("category = 'intro'", params[:category]).order(:order)
+    @ic2introvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'intro'", params[:category]).order(:order)
+    @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
+    @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
+    @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
+
     @custom_page = current_user.custom_pages.build(custom_page_params)
     if @custom_page.save
       redirect_to @custom_page, notice: 'Custom page was successfully created.'
@@ -66,5 +72,7 @@ class CustomPagesController < ApplicationController
     def custom_page_params
       params.require(:custom_page).permit(:greeting, :message, :recipient)
     end
-
+    def customization_params
+      params.require(:customization).permit(:cporder)
+    end
 end

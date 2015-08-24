@@ -1,9 +1,14 @@
+</br>
+</br>
+</br>
+</br>
+</br>
 <h2>My Custom Pages</h2>
 <br>
 <div>
   <!-- Table -->
   <table class="table table-vcenter">
-    <thead>
+    <thead class="cpindex">
       <tr>
         <th style=width=5%></th>
         <th>Recipient</th>
@@ -18,14 +23,14 @@
       <% @custom_pages.each do |custom_page| %>
         <%if custom_page.user == current_user%>
           <tr>
-            <td style=width=5%></td>
+            <td></td>
             <td><%= link_to custom_page_path(custom_page) do %>
               <span class="glyphicon glyphicon-new-window"></span>
               <%=custom_page.recipient%>
             <% end %></td>
             <td><%= custom_page.greeting %></td>
-            <td><%= truncate(custom_page.message, :length => 100, :separator => " " )%></td>
-            <td><%= link_to edit_custom_page_path(custom_page), class:"btn btn-primary" do %>
+            <td><%= truncate(custom_page.message.html_safe, :length => 100, :separator => " " )%></td>
+            <td><%= link_to edit_custom_page_path(custom_page), class:"btn btn-primary", :method => :get do %>
               <span class="glyphicon glyphicon-edit"></span> Edit
             <% end %></td>
             <td>
@@ -49,3 +54,4 @@
     <%= link_to 'New Custom page', new_custom_page_path, class: "btn btn-primary" %>
   <%end%>
 </div>
+</br>

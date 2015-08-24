@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706030230) do
+ActiveRecord::Schema.define(version: 20150813012152) do
 
   create_table "custom_pages", force: :cascade do |t|
     t.string   "greeting"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150706030230) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.string   "recipient"
+    t.integer  "cporder"
   end
 
   create_table "customizations", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150706030230) do
     t.integer  "custom_page_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "cporder"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150706030230) do
     t.string   "category"
     t.integer  "oorder"
     t.integer  "order"
+    t.string   "product"
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id"
