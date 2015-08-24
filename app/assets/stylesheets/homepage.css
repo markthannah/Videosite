@@ -62,7 +62,7 @@ p.knov {
 
 .parallax-like .overlay {
     min-height: 250px;
-    background: rgba(35, 133, 161,0);
+    background: rgba(35, 133, 161);
     font-size: 40px;
     padding-bottom: 60px;
     padding-top: 60px;
@@ -140,7 +140,7 @@ p.intro{
 
 .parallax-like2 .overlay {
     min-height: 250px;
-    background: rgba(35, 133, 161,0);
+    background: rgba(35, 133, 161);
     font-size: 40px;
     padding-bottom: 60px;
     padding-top: 60px;
@@ -157,7 +157,7 @@ p.intro{
 
 .parallax-like3 .overlay {
     min-height: 250px;
-    background: rgba(35, 133, 161,0);
+    background: rgba(35, 133, 161);
     font-size: 40px;
     padding-bottom: 60px;
     padding-top: 60px;
@@ -187,4 +187,4 @@ p.intro{
 .footer {
     padding-top: 140px;
     width: 100%
-  }
+    {
