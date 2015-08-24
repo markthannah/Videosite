@@ -16,7 +16,6 @@ gem 'paperclip', '~> 4.2'
 gem 'aws-sdk' , '< 2.0'
 gem 'masonry-rails'
 gem 'paperclip-av-transcoder'
-gem 'font-awesome-sass'
 gem 'redcarpet'
 gem 'kramdown'
 
