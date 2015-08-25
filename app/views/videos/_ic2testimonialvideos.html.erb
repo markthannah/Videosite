@@ -28,7 +28,7 @@
               <%= link_to image_tag(video.image.url(:medium)), video %>
             <div class="caption">
               <strong><%= link_to video.title, video %></strong><br/>
-              <%= truncate(video.description, :length => 110, :separator => " " )%>
+              <%= truncate(video.description, :length => 125, :separator => " " )%>
               <% if video.duration.present? %>
                 <div class="row">
                   <div class="pull-right">
