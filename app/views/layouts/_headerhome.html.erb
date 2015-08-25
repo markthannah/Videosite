@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default navbar-fixed-top" href="#page-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" href="#page-top" role="navigation" style=" padding-bottom: 0px; padding-top: 0px; ">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class= "container">
 
-  <div class="navbar-header page-scroll">
+  <div class="navbar-header page-scroll" style=" margin-top: 12px; ">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
@@ -20,19 +20,19 @@
             <a class="page-scroll" href="#page-top"></a>
         </li>
         <li>
-            <a class="page-scroll" href="#nettrekker" style ="padding-top: 10px;">netTrekker</a>
+            <a class="page-scroll" href="#nettrekker" style ="padding-top: 20px; padding-bottom: 70px;">netTrekker</a>
         </li>
         <li>
-            <a class="page-scroll" href="#icurio1" style ="padding-top: 10px;">icurio 1.0</a>
+            <a class="page-scroll" href="#icurio1" style ="padding-top: 20px; padding-bottom: 70px;">icurio 1.0</a>
         </li>
         <li>
-            <a class="page-scroll" href="#icurio2" style ="padding-top: 10px;">icurio 2.0</a>
+            <a class="page-scroll" href="#icurio2" style ="padding-top: 20px; padding-bottom: 70px;">icurio 2.0</a>
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 
       <% if user_signed_in? %>
-      <div class="btn-group" role="group" aria-label="..." style ="padding-top: 17px;">
+      <div class="btn-group" role="group" aria-label="..." style ="padding-top: 30px;">
         <%= link_to 'New Video', new_video_path, class: "btn btn-default btn-controls" %>
         <%= link_to 'My Custom Pages', custom_pages_path, class: "btn btn-default btn-controls" %>
         <%= link_to "Account Settings", edit_user_registration_path, class: "btn btn-default btn-controls" %>
