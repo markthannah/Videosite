@@ -28,7 +28,7 @@
               <span class="glyphicon glyphicon-new-window"></span>
               <%=custom_page.recipient%>
             <% end %></td>
-            <td><%= custom_page.greeting %></td>
+            <td><%= custom_page.greeting.html_safe %></td>
             <td><%= truncate(custom_page.message.html_safe, :length => 100, :separator => " " )%></td>
             <td><%= link_to edit_custom_page_path(custom_page), class:"btn btn-primary", :method => :get do %>
               <span class="glyphicon glyphicon-edit"></span> Edit

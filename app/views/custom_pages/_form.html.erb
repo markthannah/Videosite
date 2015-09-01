@@ -15,13 +15,20 @@
     <%= f.label :recipient %><br>
     <%= f.text_field :recipient, class: "form-control"%>
   </div>
+
   <div class="form-group">
     <%= f.label :greeting %><br>
-    <%= f.text_field :greeting, class: "form-control"%>
+    <%= f.text_area :greeting, class: "form-control editable form-long".html_safe %>
   </div>
+
   <div class="form-group">
     <%= f.label :message %><br>
     <%= f.text_area :message, class: "form-control editable form-long".html_safe %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <div class="row">
@@ -156,6 +163,11 @@ var editor = new MediumEditor('.editable', {
             'bold',
             'italic',
             'anchor',
+            'unorderedlist',
+            'orderedlist',
+            'justifyLeft',
+            'justifyCenter',
+            'justifyRight',
             'removeFormat'
         ]
     },

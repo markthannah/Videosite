@@ -62,3 +62,31 @@ tr th:last-child {
 table tr td.extend {
   width:50%
 }
+
+.page-header {
+  border-bottom:3px solid #4ab2d9 !important;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.myrow {
+    font-size: 0;
+}
+.myrow > * {
+    float: none;
+    display: inline-block;
+    font-size: 14px; /* if using LESS it's quicker to just use @font-size-base */
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
+
+.myrow > *:last-child {
+    vertical-align: bottom;
+}
+.myrow p:last-child {
+    margin-bottom: 0; /* optional */
+}

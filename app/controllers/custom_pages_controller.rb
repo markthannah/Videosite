@@ -70,7 +70,7 @@ class CustomPagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def custom_page_params
-      params.require(:custom_page).permit(:greeting, :message, :recipient)
+      params.require(:custom_page).permit(:greeting, :message, :recipient, :image)
     end
     def customization_params
       params.require(:customization).permit(:cporder)
