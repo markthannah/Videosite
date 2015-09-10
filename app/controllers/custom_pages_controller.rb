@@ -8,6 +8,7 @@ class CustomPagesController < ApplicationController
   end
 
   def show
+    @custom_page.videos = Video.order(:title)
   end
 
   def new
