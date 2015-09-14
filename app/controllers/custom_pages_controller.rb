@@ -8,12 +8,10 @@ class CustomPagesController < ApplicationController
   end
 
   def show
-    @custom_page.videos = Video.order(:title)
   end
 
   def new
     @custom_page = current_user.custom_pages.build
-    @videos = Video.all
     @ic2introvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'intro'", params[:category]).order(:order)
     @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
     @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
@@ -21,7 +19,6 @@ class CustomPagesController < ApplicationController
   end
 
   def edit
-    @videos = Video.all
     @ic2introvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'intro'", params[:category]).order(:order)
     @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
     @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
@@ -29,7 +26,6 @@ class CustomPagesController < ApplicationController
   end
 
   def create
-    @videos = Video.all
     @ic2introvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'intro'", params[:category]).order(:order)
     @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
     @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
@@ -72,8 +68,5 @@ class CustomPagesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def custom_page_params
       params.require(:custom_page).permit(:greeting, :message, :recipient, :image)
-    end
-    def customization_params
-      params.require(:customization).permit(:cporder)
     end
 end

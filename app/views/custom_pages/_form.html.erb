@@ -60,7 +60,7 @@
       <tbody>
       <% @ntintrovideos.each do |video| %>
             <tr>
-              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]'-%></td>
+              <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
               <td style="width:45%"><%= link_to image_tag(video.image.url (:thumb)), video,:target => "_blank" %></td>
               <td><%= label_tag :video_titles, video.title -%></td>
               <td></td>
