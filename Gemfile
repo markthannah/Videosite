@@ -18,6 +18,7 @@ gem 'masonry-rails'
 gem 'paperclip-av-transcoder'
 gem 'redcarpet'
 gem 'kramdown'
+gem 'phantomjs','~> 1.9.8.0b'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
