@@ -1,0 +1,128 @@
+.page-header-lc {
+    margin-left: 65px;
+}
+
+.pad-contain {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.description-panel{
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.video-description {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.midline{
+  border-color: #78ab36;
+  border-width: 4px;
+}
+
+.pdf-thumb-box {
+  display: inline-block !important;
+  position: relative !important;
+  overflow: hidden;
+}
+.pdf-thumb-box-overlay {
+  display: none;
+}
+.pdf-thumb-box a:hover .pdf-thumb-box-overlay {
+  display: inline;
+  text-align: center;
+  position: absolute;
+  transition: background 0.2s ease, padding 0.8s linear;
+  background-color: rgba(128, 128, 128, 0.58);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+.pdf-thumb-box-overlay span {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.more-heading {
+  padding-bottom: 15px;
+}
+
+.bg-primary1 {
+    background-color: #089de3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 100px;
+    color: white;
+}
+
+.bg-primary2 {
+    background-color: #f05f40;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+.text-faded {
+    color: white;
+    font-size: 18px;
+}
+hr.light {
+    border-color: #fff;
+}
+
+.well-resources{
+  margin-right: 5px;
+}
+
+.resource-row {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+}
+
+@media (min-width: 1200px) {
+  .top-section{
+    width:660px;
+    padding-bottom:370.5px !important;
+              }
+    .panel-bottom{
+      margin-bottom: 70px;
+                  }
+    .large-width {
+      width:660px;
+      right: 353px;
+      padding-bottom: 0px;
+    }
+    .description{
+       margin-bottom:0px;
+    }
+    .well-style {
+      padding-left: 55px;
+      padding-right: 55px;
+      padding-top: 25px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .top-section2{
+    width:555px;
+    padding-bottom:312px !important;
+}
+  .large-width {
+    width: 555px;
+    right: 296px;
+    padding-bottom: 0px;
+  }
+  .description{
+     margin-bottom:0px;
+  }
+  .well-style {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+  }
+}
