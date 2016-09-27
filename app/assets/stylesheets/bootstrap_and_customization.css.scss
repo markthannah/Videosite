@@ -33,6 +33,7 @@ $font-family-sans-serif: 'Signika', 'Helvetica Neue', Helvetica, Arial, sans-ser
 .pull-right {
   float: right !important;
   padding-right: 15px;
+  padding-top: 10px;
 }
 
 body {
@@ -81,6 +82,7 @@ body {
 
 .thumbnail {
   margin-bottom: 20px;
+  height: 360px;
 }
 
 .page-header-lc {
