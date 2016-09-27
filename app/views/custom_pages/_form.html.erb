@@ -32,19 +32,19 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3 center">
+    <div class="col-md-4 center">
       <h3>netTrekker: Training</h3>
     </div>
-    <div class="col-md-3 center">
+    <div class="col-md-4 center">
       <h3>icurio: Training</h3>
     </div>
-    <div class="col-md-3 center">
-      <h3>icurio 2.0: Mooresville</h3>
+    <div class="col-md-4 center">
+      <h3>Content Collection</h3>
     </div>
   </div>
 
 <div class="row">
-  <div class="col-md-3 reduce-tablepad">
+  <div class="col-md-4 reduce-tablepad">
       <table class="table table-hover table-vcenter">
         <thead class="nT">
           <tr>
@@ -67,7 +67,7 @@
     </table>
   </div>
 
-  <div class="col-md-3 reduce-tablepad">
+  <div class="col-md-4 reduce-tablepad">
       <table class="table table-hover table-vcenter">
         <thead class="ic1">
           <tr>
@@ -90,7 +90,7 @@
     </table>
   </div>
 
-    <div class="col-md-3 reduce-tablepad">
+    <div class="col-md-4 reduce-tablepad">
       <table class="table table-hover table-vcenter">
         <thead class="ic2">
           <tr>
@@ -101,7 +101,7 @@
           </tr>
         </thead>
       <tbody>
-        <% @ic2testimonialvideos.each do |video| %>
+        <% @contentintrovideos.each do |video| %>
             <tr>
               <td><%= check_box_tag :video_ids, video.id, @custom_page.videos.include?(video), :name => 'custom_page[video_ids][]' -%></td>
               <td style="width:45%"><%= link_to image_tag(video.image.url (:thumb)), video, :target => "_blank"%></td>

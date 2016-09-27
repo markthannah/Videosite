@@ -7,6 +7,8 @@ get "about" => "pages#about"
 get "ntvids" => "videos#ntvids"
 get "ic1vids" => "videos#ic1vids"
 get "ic2vids" => "videos#ic2vids"
+get "contentvids" => "videos#contentvids"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :ntvids, :ic1vids, :ic2vids]
+  before_action :authenticate_user!, except: [:index, :show, :ntvids, :ic1vids, :ic2vids, :contentvids]
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
@@ -42,6 +42,10 @@ class VideosController < ApplicationController
 
   def ntvids
     @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
+  end
+
+  def contentvids
+    @contentintrovideos = Video.where("product = 'Content Collection'", params[:product]).order(:order)
   end
 
   def ic1vids

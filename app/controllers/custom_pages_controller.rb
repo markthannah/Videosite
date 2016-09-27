@@ -16,6 +16,7 @@ class CustomPagesController < ApplicationController
     @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
     @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
     @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
+    @contentintrovideos = Video.where("product = 'Content Collection'", params[:product]).order(:order)
   end
 
   def edit
@@ -23,6 +24,7 @@ class CustomPagesController < ApplicationController
     @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
     @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
     @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
+    @contentintrovideos = Video.where("product = 'Content Collection'", params[:product]).order(:order)
   end
 
   def create
@@ -30,6 +32,7 @@ class CustomPagesController < ApplicationController
     @ic2testimonialvideos = Video.where("product = 'icurio 2.0'", params[:product]).where("category = 'testimonial'", params[:category]).order(:order)
     @ic1introvideos = Video.where("product = 'icurio 1.0'", params[:product]).order(:order)
     @ntintrovideos = Video.where("product = 'netTrekker'", params[:product]).order(:order)
+    @contentintrovideos = Video.where("product = 'Content Collection'", params[:product]).order(:order)
 
     @custom_page = current_user.custom_pages.build(custom_page_params)
     if @custom_page.save
