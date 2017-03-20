@@ -29,19 +29,21 @@
                 </div>
               <% end %>
 
-              <div class="actions">
+              <% if user_signed_in? %>
+                <div class="actions">
 
-                <%= link_to edit_video_path(video) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
+                  <%= link_to edit_video_path(video) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
 
-                <%= link_to video, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
+                  <%= link_to video, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
 
-              </div>
+                </div>
+              <% end %>
             </div>
             </div>
           </div>
