@@ -10,6 +10,10 @@ class VideosController < ApplicationController
   def show
   end
 
+  def video_dashboard
+  @videos = Video.all
+  end
+
   def new
     @video = current_user.videos.new
 
